@@ -2,6 +2,10 @@
 
 A set of example Skedulo Plus Mobile Extensions, to be deployed with the [Skedulo CLI](#Usage).
 
+## Contributing
+
+We welcome ideas, fixes and new examples! Please see the [CONTRIBUTING](CONTRIBUTING.md) guide here!
+
 ## Extensions
 
 <table>
