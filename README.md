@@ -1,4 +1,4 @@
-# Skedulo Plus Examples
+# Skedulo Mobile Extension Examples
 
 A set of example Skedulo Plus Mobile Extensions, to be deployed with the [Skedulo CLI](#Usage).
 
