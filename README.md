@@ -13,7 +13,7 @@ We welcome ideas, fixes and new examples! Please see the [CONTRIBUTING](CONTRIBU
   <!-- Hello World -->
   <td width="50%" valign="top">
     <h2>Hello World</h2>
-    <img src="images/hello-world.jpg" alt="Hello World Extension" width="400"/>
+    <img src="images/hello-world.png" alt="Hello World Extension" width="400"/>
     <br/>
     <br/>
     <details>
@@ -29,6 +29,7 @@ We welcome ideas, fixes and new examples! Please see the [CONTRIBUTING](CONTRIBU
   <!-- Account Details -->
   <td valign="top">
     <h2>Account Details</h2>
+    <img src="images/account-details.png" alt="Account Details Extension" width="400"/>
     <br/>
     <br/>
     <details>
@@ -46,7 +47,7 @@ We welcome ideas, fixes and new examples! Please see the [CONTRIBUTING](CONTRIBU
   <!-- Add Products -->
   <td width="50%" valign="top">
     <h2>Add Products</h2>
-    <img src="images/add-product.jpg" alt="Add Products Extension" width="400"/> 
+    <img src="images/add-products.png" alt="Add Products Extension" width="400"/> 
     <br/>
     <br/>
     <details>
@@ -62,7 +63,7 @@ We welcome ideas, fixes and new examples! Please see the [CONTRIBUTING](CONTRIBU
   <!-- Job Products -->
   <td valign="top">
     <h2>Job Products</h2>
-    <img src="images/job-products.jpg" alt="Job Products Extension" width="400"/>
+    <img src="images/job-products.png" alt="Job Products Extension" width="400"/>
     <br/>
     <br/>
     <details>
@@ -80,6 +81,7 @@ We welcome ideas, fixes and new examples! Please see the [CONTRIBUTING](CONTRIBU
   <!-- Account Contacts -->
   <td width="50%" valign="top">
     <h2>Account Contacts</h2>
+    <img src="images/account-contacts.png" alt="Account Contacts Extension" width="400"/>
     <br/>
     <br/>
     <details>
@@ -95,6 +97,7 @@ We welcome ideas, fixes and new examples! Please see the [CONTRIBUTING](CONTRIBU
   <!-- Conditional Rendering -->
   <td valign="top">
     <h2>Conditional Rendering</h2>
+    <img src="images/conditional-rendering.png" alt="Conditional Rendering Extension" width="400"/>
     <br/>
     <br/>
     <details>
@@ -112,6 +115,7 @@ We welcome ideas, fixes and new examples! Please see the [CONTRIBUTING](CONTRIBU
   <!-- UI Components Showcase -->
   <td width="50%" valign="top">
     <h2>UI Components Showcase</h2>
+    <img src="images/ui-showcase.png" alt="UI Components Showcase Extension" width="400"/>
     <br/>
     <br/>
     <details>
@@ -127,6 +131,7 @@ We welcome ideas, fixes and new examples! Please see the [CONTRIBUTING](CONTRIBU
   <!-- Read Only Extension -->
   <td valign="top">
     <h2>Read Only Extension</h2>
+    <img src="images/read-only.png" alt="Read Only Extension" width="400"/>
     <br/>
     <br/>
     <details>
@@ -144,6 +149,7 @@ We welcome ideas, fixes and new examples! Please see the [CONTRIBUTING](CONTRIBU
   <!-- Single Submission Extension -->
   <td width="50%" valign="top">
     <h2>Single Submission Extension</h2>
+    <img src="images/single-submission.png" alt="Single Submission Extension" width="400"/>
     <br/>
     <br/>
     <details>
@@ -159,6 +165,7 @@ We welcome ideas, fixes and new examples! Please see the [CONTRIBUTING](CONTRIBU
   <!-- Single Job Product Extension -->
   <td valign="top">
     <h2>Single Job Product Extension</h2>
+    <img src="images/single-job.png" alt="Single Job Product Extension" width="400"/>
     <br/>
     <br/>
     <details>
