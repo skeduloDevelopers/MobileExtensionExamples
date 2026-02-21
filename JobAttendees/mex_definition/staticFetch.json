@@ -1,0 +1,16 @@
+{
+  "type": "GraphQl",
+  "Resources": {
+    "object": "Resources",
+    "fields": [
+      "UID",
+      "Name",
+      "Category",
+      "PrimaryPhone",
+      "Email",
+      "MobilePhone"
+    ],
+    "filter": "",
+    "variables": {}
+  }
+}

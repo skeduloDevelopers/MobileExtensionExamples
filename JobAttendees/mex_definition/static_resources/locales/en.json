@@ -1,0 +1,40 @@
+{
+  "form": {
+    "AttendeeListPage": {
+      "Title": "Attendees",
+      "ItemTitle": "${item.Resource.Name}",
+      "ItemCaption": "Phone: ${item.Resource.MobilePhone}",
+      "Empty": "No attendees have been added to this job yet.",
+      "Add": "Add attendee",
+      "SearchPlaceholder": "Search attendees",
+      "CheckedInTag": "Checked In",
+      "NotCheckedInTag": "Not Checked In"
+    },
+    "UpsertAttendeePage": {
+      "AddAttendee": "Add Attendee",
+      "EditAttendee": "Attendee Details",
+      "Resource": "Attendee",
+      "SelectResourceHint": "Search for a resource",
+      "ResourceIsRequired": "An attendee must be selected",
+      "CheckedIn": "Checked In",
+      "ContactDetailsSection": "Contact Details",
+      "ResourceName": "Name",
+      "MobilePhone": "Mobile Phone",
+      "Email": "Email",
+      "Category": "Category",
+      "Add": "Add",
+      "Update": "Save",
+      "DeleteAttendee": "Remove Attendee",
+      "ConfirmDeleteTitle": "Remove attendee",
+      "ConfirmDeleteDescription": "Are you sure you want to remove this attendee? This cannot be undone.",
+      "ConfirmDeleteYesButton": "Yes",
+      "ConfirmDeleteNoButton": "No"
+    },
+    "ResourceSelectPage": {
+      "Title": "Select an Attendee",
+      "ItemTitle": "${item.Name}",
+      "ItemCaption": "${item.MobilePhone}",
+      "Empty": "No resources found"
+    }
+  }
+}

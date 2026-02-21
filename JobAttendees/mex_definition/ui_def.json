@@ -1,0 +1,132 @@
+{
+  "firstPage": "AttendeeListPage",
+  "pages": {
+    "AttendeeListPage": {
+      "title": "form.AttendeeListPage.Title",
+      "type": "list",
+      "addNew": {
+        "text": "form.AttendeeListPage.Add",
+        "destinationPage": "UpsertAttendeePage",
+        "defaultData": {
+          "data": {
+            "JobId": "${metadata.contextObjectId}",
+            "CheckedIn": false
+          },
+          "objectName": "JobAllocations"
+        }
+      },
+      "sourceExpression": "formData.JobAllocations",
+      "emptyText": "form.AttendeeListPage.Empty",
+      "search": {
+        "placeholder": "form.AttendeeListPage.SearchPlaceholder",
+        "filterOnProperties": ["Resource.Name", "Resource.MobilePhone"]
+      },
+      "itemLayout": {
+        "type": "titleAndCaption",
+        "title": "form.AttendeeListPage.ItemTitle",
+        "caption": "form.AttendeeListPage.ItemCaption",
+        "tags": [
+          {
+            "text": "form.AttendeeListPage.CheckedInTag",
+            "expression": "item.CheckedIn == true",
+            "color": "green"
+          },
+          {
+            "text": "form.AttendeeListPage.NotCheckedInTag",
+            "expression": "item.CheckedIn != true",
+            "color": "grey"
+          }
+        ]
+      },
+      "itemClickDestination": "UpsertAttendeePage"
+    },
+    "UpsertAttendeePage": {
+      "type": "flat",
+      "upsert": {
+        "insertTitle": "form.UpsertAttendeePage.AddAttendee",
+        "updateTitle": "form.UpsertAttendeePage.EditAttendee",
+        "insertButtonText": "form.UpsertAttendeePage.Add",
+        "updateButtonText": "form.UpsertAttendeePage.Update",
+        "defaultDataForNewObject": {
+          "CheckedIn": false
+        },
+        "validator": [],
+        "saveDraft": {
+          "askWhenBack": true
+        }
+      },
+      "delete": {
+        "canDeleteExpression": "converters.data.isTempUID(pageData) == false",
+        "text": "form.UpsertAttendeePage.DeleteAttendee",
+        "confirm": {
+          "title": "form.UpsertAttendeePage.ConfirmDeleteTitle",
+          "description": "form.UpsertAttendeePage.ConfirmDeleteDescription",
+          "yesBtn": "form.UpsertAttendeePage.ConfirmDeleteYesButton",
+          "noBtn": "form.UpsertAttendeePage.ConfirmDeleteNoButton"
+        }
+      },
+      "saveDraft": {
+        "askWhenBack": true
+      },
+      "items": [
+        {
+          "type": "selectEditor",
+          "title": "form.UpsertAttendeePage.Resource",
+          "structureExpression": "pageData.Resource",
+          "valueExpression": "pageData.ResourceId",
+          "sourceExpression": "sharedData.Resources",
+          "displayExpression": "pageData.Resource.Name",
+          "placeholder": "form.UpsertAttendeePage.SelectResourceHint",
+          "selectPage": {
+            "itemTitle": "form.ResourceSelectPage.ItemTitle",
+            "itemCaption": "form.ResourceSelectPage.ItemCaption",
+            "emptyText": "form.ResourceSelectPage.Empty",
+            "title": "form.ResourceSelectPage.Title",
+            "searchBar": {
+              "filterOnProperties": ["Name", "MobilePhone", "Email"]
+            }
+          },
+          "validator": [
+            {
+              "type": "expression",
+              "expression": "pageData.ResourceId",
+              "errorMessage": "form.UpsertAttendeePage.ResourceIsRequired"
+            }
+          ]
+        },
+        {
+          "type": "switchEditor",
+          "valueExpression": "pageData.CheckedIn",
+          "title": "form.UpsertAttendeePage.CheckedIn"
+        },
+        {
+          "type": "section",
+          "title": "form.UpsertAttendeePage.ContactDetailsSection",
+          "visibleExpression": "pageData.ResourceId",
+          "items": [
+            {
+              "type": "text_display",
+              "title": "form.UpsertAttendeePage.ResourceName",
+              "valueExpression": "pageData.Resource.Name"
+            },
+            {
+              "type": "text_display",
+              "title": "form.UpsertAttendeePage.MobilePhone",
+              "valueExpression": "pageData.Resource.MobilePhone"
+            },
+            {
+              "type": "text_display",
+              "title": "form.UpsertAttendeePage.Email",
+              "valueExpression": "pageData.Resource.Email"
+            },
+            {
+              "type": "text_display",
+              "title": "form.UpsertAttendeePage.Category",
+              "valueExpression": "pageData.Resource.Category"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
