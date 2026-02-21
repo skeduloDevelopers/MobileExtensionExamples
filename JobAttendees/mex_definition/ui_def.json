@@ -81,6 +81,45 @@
         "errorMessage": "FieldIsRequired"
         }
         ]
+        },
+        {
+          "type": "selectEditor",
+          "title": "form.UpsertJobAttendeePage.CancelReason",
+          "placeholder": "form.UpsertJobAttendeePage.CancelReasonPlaceholder",
+          "valueExpression": "pageData.CancelReason",
+          "sourceExpression": "sharedData.__vocabulary.CancelReason",
+          "displayExpression": "pageData.CancelReason",
+          "showIfExpression": "pageData.Status == 'Cancelled'",
+          "selectPage": {
+            "itemTitle": "form.UpsertJobAttendeePage.SelectCancelReasonItemTitle",
+            "title": "form.UpsertJobAttendeePage.SelectCancelReasonPageTitle",
+            "searchBar": {}
+          }
+        },
+        {
+          "type": "dateTimeEditor",
+          "title": "form.UpsertJobAttendeePage.TimeCancelled",
+          "mode": "datetime",
+          "valueExpression": "pageData.TimeCancelled",
+          "showIfExpression": "pageData.Status == 'Cancelled'",
+          "readonly": true
+        },
+        {
+          "type": "toggleEditor",
+          "mode": "switch",
+          "items": [
+            {
+              "valueExpression": "pageData.Waitlisted",
+              "text": "form.UpsertJobAttendeePage.Waitlisted"
+            }
+          ]
+        },
+        {
+          "type": "textEditor",
+          "title": "form.UpsertJobAttendeePage.Notes",
+          "placeholder": "form.UpsertJobAttendeePage.NotesHint",
+          "valueExpression": "pageData.Notes",
+          "multiline": true
         }
       ]
     }

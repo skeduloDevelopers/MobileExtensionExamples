@@ -39,6 +39,12 @@
       "SelectAttendeeStatusItemTitle": "${item.Label}",
       "SelectAttendeeStatusPageTitle": "Select Attendee Status",
       "AttendeeStatus":"Status",
+      "Waitlisted": "Waitlisted",
+      "CancelReason": "Cancel Reason",
+      "CancelReasonPlaceholder": "Select a cancel reason",
+      "SelectCancelReasonItemTitle": "${item.Label}",
+      "SelectCancelReasonPageTitle": "Select Cancel Reason",
+      "TimeCancelled": "Time Cancelled",
       "AttendeeNameLabel": "Attendee",
       "AttendeeName": "${pageData.Contact.FirstName} ${pageData.Contact.LastName}"
     },

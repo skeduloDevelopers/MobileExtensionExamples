@@ -1,6 +1,7 @@
 {
  "type": "GraphQl",
  "__vocabulary": {
-   "AttendeeStatus": "Attendees:Status"
+   "AttendeeStatus": "Attendees:Status",
+   "CancelReason": "Attendees:CancelReason"
  }
 }
