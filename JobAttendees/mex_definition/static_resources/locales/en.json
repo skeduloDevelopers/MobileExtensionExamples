@@ -1,40 +1,47 @@
 {
   "form": {
-    "AttendeeListPage": {
-      "Title": "Attendees",
-      "ItemTitle": "${item.Resource.Name}",
-      "ItemCaption": "Phone: ${item.Resource.MobilePhone}",
-      "Empty": "No attendees have been added to this job yet.",
-      "Add": "Add attendee",
-      "SearchPlaceholder": "Search attendees",
-      "CheckedInTag": "Checked In",
-      "NotCheckedInTag": "Not Checked In"
+    "JobProductListPages": {
+      "JobProductTitle": "Products",
+      "ItemTitle": "${item.Product.Name}",
+      "ItemCaption": "Quantity: ${item.Qty}\nDate added: ${dateFormat(item.CreatedDate)}",
+      "Empty": "You don't have any Products related to this job yet.",
+      "Add": "Add product",
+      "SearchPlaceholder": "Search for Products"
     },
-    "UpsertAttendeePage": {
-      "AddAttendee": "Add Attendee",
-      "EditAttendee": "Attendee Details",
-      "Resource": "Attendee",
-      "SelectResourceHint": "Search for a resource",
-      "ResourceIsRequired": "An attendee must be selected",
-      "CheckedIn": "Checked In",
-      "ContactDetailsSection": "Contact Details",
-      "ResourceName": "Name",
-      "MobilePhone": "Mobile Phone",
-      "Email": "Email",
-      "Category": "Category",
+    "UpsertJobProductPage": {
+      "AddAttachment": "Add Attachment",
+      "AttachmentRequired": "You must upload an image of the product",
+      "Quantity": "Quantity",
+      "QuantityHint": "Enter quantity",
+      "AddProduct": "Add Product",
+      "EditProduct": "Edit Product",
+      "Product": "Product",
+      "QuantityMustBeAbove0": "Quantity must be between 1 and 1000",
+      "SelectProduct": "Product",
+      "SearchProduct": "Search for Products",
+      "SelectProductHint": "Search",
+      "SelectProductDescription": "${pageData.Product.Description}",
+      "DescriptionTitle": "Description",
       "Add": "Add",
       "Update": "Save",
-      "DeleteAttendee": "Remove Attendee",
-      "ConfirmDeleteTitle": "Remove attendee",
-      "ConfirmDeleteDescription": "Are you sure you want to remove this attendee? This cannot be undone.",
+      "JobProductIsRequired": "Job Product is required",
+      "DeleteJobProduct": "Delete Job Product",
+      "ConfirmDeleteTitle": "Remove product",
+      "ConfirmDeleteDescription": "Are you sure that you wish to remove this Product, this can not be undone",
       "ConfirmDeleteYesButton": "Yes",
-      "ConfirmDeleteNoButton": "No"
+      "ConfirmDeleteNoButton": "No",
+      "CreatedDate": "Created Date",
+      "NotesHint": "Enter any notes related to this product",
+      "Notes": "Notes",
+      "SerialNumber": "Product Serial Number",
+      "SerialNumberHint": "Use your device's camera to scan the serial number",
+      "SerialNumberMustBeEntered": "You must enter or scan a serial number"
     },
-    "ResourceSelectPage": {
-      "Title": "Select an Attendee",
+    "JobProductSelectPage": {
+      "Title": "Select a Product",
       "ItemTitle": "${item.Name}",
-      "ItemCaption": "${item.MobilePhone}",
-      "Empty": "No resources found"
+      "ItemCaption": "${item.Description}",
+      "Empty": "No Products Found"
     }
   }
 }

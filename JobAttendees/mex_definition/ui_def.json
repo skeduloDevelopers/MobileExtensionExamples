@@ -1,54 +1,41 @@
 {
-  "firstPage": "AttendeeListPage",
+  "firstPage": "JobProductListPage",
   "pages": {
-    "AttendeeListPage": {
-      "title": "form.AttendeeListPage.Title",
+    "JobProductListPage": {
+      "title": "form.JobProductListPages.JobProductTitle",
       "type": "list",
       "addNew": {
-        "text": "form.AttendeeListPage.Add",
-        "destinationPage": "UpsertAttendeePage",
+        "text": "form.JobProductListPages.Add",
+        "destinationPage": "UpsertJobProductPage",
         "defaultData": {
           "data": {
-            "JobId": "${metadata.contextObjectId}",
-            "CheckedIn": false
+            "JobId": "${metadata.contextObjectId}"
           },
-          "objectName": "JobAllocations"
+          "objectName": "Attendees"
         }
       },
-      "sourceExpression": "formData.JobAllocations",
-      "emptyText": "form.AttendeeListPage.Empty",
+      "sourceExpression": "formData.Attendees",
+      "emptyText": "form.JobProductListPages.Empty",
       "search": {
-        "placeholder": "form.AttendeeListPage.SearchPlaceholder",
-        "filterOnProperties": ["Resource.Name", "Resource.MobilePhone"]
+        "placeholder": "form.JobProductListPages.SearchPlaceholder",
+        "filterOnProperties": ["Contact.FirstName", "Contact.LastName"]
       },
       "itemLayout": {
         "type": "titleAndCaption",
-        "title": "form.AttendeeListPage.ItemTitle",
-        "caption": "form.AttendeeListPage.ItemCaption",
-        "tags": [
-          {
-            "text": "form.AttendeeListPage.CheckedInTag",
-            "expression": "item.CheckedIn == true",
-            "color": "green"
-          },
-          {
-            "text": "form.AttendeeListPage.NotCheckedInTag",
-            "expression": "item.CheckedIn != true",
-            "color": "grey"
-          }
-        ]
+        "title": "form.JobProductListPages.ItemTitle",
+        "caption": "form.JobProductListPages.ItemCaption"
       },
-      "itemClickDestination": "UpsertAttendeePage"
+      "itemClickDestination": "UpsertJobProductPage"
     },
-    "UpsertAttendeePage": {
+    "UpsertJobProductPage": {
       "type": "flat",
       "upsert": {
-        "insertTitle": "form.UpsertAttendeePage.AddAttendee",
-        "updateTitle": "form.UpsertAttendeePage.EditAttendee",
-        "insertButtonText": "form.UpsertAttendeePage.Add",
-        "updateButtonText": "form.UpsertAttendeePage.Update",
+        "insertTitle": "form.UpsertJobProductPage.AddProduct",
+        "updateTitle": "form.UpsertJobProductPage.EditProduct",
+        "insertButtonText": "form.UpsertJobProductPage.Add",
+        "updateButtonText": "form.UpsertJobProductPage.Update",
         "defaultDataForNewObject": {
-          "CheckedIn": false
+          "CreatedDate": "${now()}"
         },
         "validator": [],
         "saveDraft": {
@@ -57,12 +44,12 @@
       },
       "delete": {
         "canDeleteExpression": "converters.data.isTempUID(pageData) == false",
-        "text": "form.UpsertAttendeePage.DeleteAttendee",
+        "text": "form.UpsertJobProductPage.DeleteJobProduct",
         "confirm": {
-          "title": "form.UpsertAttendeePage.ConfirmDeleteTitle",
-          "description": "form.UpsertAttendeePage.ConfirmDeleteDescription",
-          "yesBtn": "form.UpsertAttendeePage.ConfirmDeleteYesButton",
-          "noBtn": "form.UpsertAttendeePage.ConfirmDeleteNoButton"
+          "title": "form.UpsertJobProductPage.ConfirmDeleteTitle",
+          "description": "form.UpsertJobProductPage.ConfirmDeleteDescription",
+          "yesBtn": "form.UpsertJobProductPage.ConfirmDeleteYesButton",
+          "noBtn": "form.UpsertJobProductPage.ConfirmDeleteNoButton"
         }
       },
       "saveDraft": {
@@ -71,58 +58,39 @@
       "items": [
         {
           "type": "selectEditor",
-          "title": "form.UpsertAttendeePage.Resource",
-          "structureExpression": "pageData.Resource",
-          "valueExpression": "pageData.ResourceId",
-          "sourceExpression": "sharedData.Resources",
-          "displayExpression": "pageData.Resource.Name",
-          "placeholder": "form.UpsertAttendeePage.SelectResourceHint",
+          "title": "form.UpsertJobProductPage.Product",
+          "structureExpression": "pageData.Product",
+          "valueExpression": "pageData.ContactId",
+          "sourceExpression": "sharedData.Contacts",
+          "displayExpression": "pageData.Contact.FirstName + ' ' + pageData.Contact.LastName",
+          "placeholder": "form.UpsertJobProductPage.SelectContactHint",
           "selectPage": {
-            "itemTitle": "form.ResourceSelectPage.ItemTitle",
-            "itemCaption": "form.ResourceSelectPage.ItemCaption",
-            "emptyText": "form.ResourceSelectPage.Empty",
-            "title": "form.ResourceSelectPage.Title",
+            "itemTitle": "form.JobProductSelectPage.ItemTitle",
+            "emptyText": "form.JobProductSelectPage.Empty",
+            "title": "form.JobProductSelectPage.Title",
             "searchBar": {
-              "filterOnProperties": ["Name", "MobilePhone", "Email"]
+              "filterOnProperties": ["FirstName", "LastName"]
             }
           },
           "validator": [
             {
               "type": "expression",
-              "expression": "pageData.ResourceId",
-              "errorMessage": "form.UpsertAttendeePage.ResourceIsRequired"
+              "expression": "pageData.ContactId",
+              "errorMessage": "form.UpsertJobProductPage.ContactIsRequired"
             }
           ]
         },
         {
-          "type": "switchEditor",
-          "valueExpression": "pageData.CheckedIn",
-          "title": "form.UpsertAttendeePage.CheckedIn"
-        },
-        {
-          "type": "section",
-          "title": "form.UpsertAttendeePage.ContactDetailsSection",
-          "visibleExpression": "pageData.ResourceId",
-          "items": [
+          "type": "textEditor",
+          "keyboardType": "number-pad",
+          "valueExpression": "pageData.Status",
+          "title": "form.UpsertJobProductPage.Quantity",
+          "placeholder": "form.UpsertJobProductPage.QuantityHint",
+          "validator": [
             {
-              "type": "text_display",
-              "title": "form.UpsertAttendeePage.ResourceName",
-              "valueExpression": "pageData.Resource.Name"
-            },
-            {
-              "type": "text_display",
-              "title": "form.UpsertAttendeePage.MobilePhone",
-              "valueExpression": "pageData.Resource.MobilePhone"
-            },
-            {
-              "type": "text_display",
-              "title": "form.UpsertAttendeePage.Email",
-              "valueExpression": "pageData.Resource.Email"
-            },
-            {
-              "type": "text_display",
-              "title": "form.UpsertAttendeePage.Category",
-              "valueExpression": "pageData.Resource.Category"
+              "type": "expression",
+              "errorMessage": "form.UpsertJobProductPage.QuantityMustBeAbove0",
+              "expression": "pageData.Qty > 0 && pageData.Qty <= 1000"
             }
           ]
         }

@@ -1,14 +1,11 @@
 {
   "type": "GraphQl",
-  "Resources": {
-    "object": "Resources",
+  "Products": {
+    "object": "Contacts",
     "fields": [
       "UID",
-      "Name",
-      "Category",
-      "PrimaryPhone",
-      "Email",
-      "MobilePhone"
+      "FirstName",
+      "LastName"
     ],
     "filter": "",
     "variables": {}

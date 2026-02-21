@@ -1,13 +1,12 @@
 {
-    "summary": "View and check in attendees for a job",
+    "summary": "Allows you to manage Job Products",
     "email": "",
     "revisionCount": 1,
     "contextObject": "Jobs",
     "bundleId": "",
     "displayOrder": 0,
     "templateId": "",
-    "hasAttachments": [],
     "references": {
-      "JobAllocations": ["Resource"]
+      "Attendees": ["Contacts"]
     }
   }

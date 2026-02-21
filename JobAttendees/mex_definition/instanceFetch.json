@@ -1,19 +1,13 @@
 {
   "type": "GraphQl",
-  "JobAllocations": {
-    "object": "JobAllocations",
+  "Attendees": {
+    "object": "Attendees",
     "fields": [
       "UID",
       "JobId",
-      "ResourceId",
-      "Status",
-      "CheckedIn",
-      "Resource.UID",
-      "Resource.Name",
-      "Resource.Category",
-      "Resource.PrimaryPhone",
-      "Resource.Email",
-      "Resource.MobilePhone"
+      "Contact.UID",
+      "Contact.FirstName",
+      "Status"
     ],
     "filter": "JobId == '${jobUID}'",
     "variables": {
