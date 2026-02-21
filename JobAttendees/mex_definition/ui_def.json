@@ -1,12 +1,12 @@
 {
-  "firstPage": "JobProductListPage",
+  "firstPage": "JobAttendeesListPage",
   "pages": {
-    "JobProductListPage": {
-      "title": "form.JobProductListPages.JobProductTitle",
+    "JobAttendeesListPage": {
+      "title": "form.JobAttendeesListPages.JobAttendeesTitle",
       "type": "list",
       "addNew": {
-        "text": "form.JobProductListPages.Add",
-        "destinationPage": "UpsertJobProductPage",
+        "text": "form.JobAttendeesListPages.Add",
+        "destinationPage": "UpsertJobAttendeePage",
         "defaultData": {
           "data": {
             "JobId": "${metadata.contextObjectId}"
@@ -15,25 +15,25 @@
         }
       },
       "sourceExpression": "formData.Attendees",
-      "emptyText": "form.JobProductListPages.Empty",
+      "emptyText": "form.JobAttendeesListPages.Empty",
       "search": {
-        "placeholder": "form.JobProductListPages.SearchPlaceholder",
+        "placeholder": "form.JobAttendeesListPages.SearchPlaceholder",
         "filterOnProperties": ["Contact.FirstName", "Contact.LastName"]
       },
       "itemLayout": {
         "type": "titleAndCaption",
-        "title": "form.JobProductListPages.ItemTitle",
-        "caption": "form.JobProductListPages.ItemCaption"
+        "title": "form.JobAttendeesListPages.ItemTitle",
+        "caption": "form.JobAttendeesListPages.ItemCaption"
       },
-      "itemClickDestination": "UpsertJobProductPage"
+      "itemClickDestination": "UpsertJobAttendeePage"
     },
-    "UpsertJobProductPage": {
+    "UpsertJobAttendeePage": {
       "type": "flat",
       "upsert": {
-        "insertTitle": "form.UpsertJobProductPage.AddProduct",
-        "updateTitle": "form.UpsertJobProductPage.EditProduct",
-        "insertButtonText": "form.UpsertJobProductPage.Add",
-        "updateButtonText": "form.UpsertJobProductPage.Update",
+        "insertTitle": "form.UpsertJobAttendeePage.AddAttendee",
+        "updateTitle": "form.UpsertJobAttendeePage.EditAttendee",
+        "insertButtonText": "form.UpsertJobAttendeePage.Add",
+        "updateButtonText": "form.UpsertJobAttendeePage.Update",
         "defaultDataForNewObject": {
           "CreatedDate": "${now()}"
         },
@@ -44,12 +44,12 @@
       },
       "delete": {
         "canDeleteExpression": "converters.data.isTempUID(pageData) == false",
-        "text": "form.UpsertJobProductPage.DeleteJobProduct",
+        "text": "form.UpsertJobAttendeePage.DeleteAttendee",
         "confirm": {
-          "title": "form.UpsertJobProductPage.ConfirmDeleteTitle",
-          "description": "form.UpsertJobProductPage.ConfirmDeleteDescription",
-          "yesBtn": "form.UpsertJobProductPage.ConfirmDeleteYesButton",
-          "noBtn": "form.UpsertJobProductPage.ConfirmDeleteNoButton"
+          "title": "form.UpsertJobAttendeePage.ConfirmDeleteTitle",
+          "description": "form.UpsertJobAttendeePage.ConfirmDeleteDescription",
+          "yesBtn": "form.UpsertJobAttendeePage.ConfirmDeleteYesButton",
+          "noBtn": "form.UpsertJobAttendeePage.ConfirmDeleteNoButton"
         }
       },
       "saveDraft": {
@@ -57,42 +57,30 @@
       },
       "items": [
         {
-          "type": "selectEditor",
-          "title": "form.UpsertJobProductPage.Product",
-          "structureExpression": "pageData.Product",
-          "valueExpression": "pageData.ContactId",
-          "sourceExpression": "sharedData.Contacts",
-          "displayExpression": "pageData.Contact.FirstName + ' ' + pageData.Contact.LastName",
-          "placeholder": "form.UpsertJobProductPage.SelectContactHint",
-          "selectPage": {
-            "itemTitle": "form.JobProductSelectPage.ItemTitle",
-            "emptyText": "form.JobProductSelectPage.Empty",
-            "title": "form.JobProductSelectPage.Title",
-            "searchBar": {
-              "filterOnProperties": ["FirstName", "LastName"]
-            }
-          },
-          "validator": [
-            {
-              "type": "expression",
-              "expression": "pageData.ContactId",
-              "errorMessage": "form.UpsertJobProductPage.ContactIsRequired"
-            }
-          ]
+            "type": "textView",
+            "title": "form.UpsertJobAttendeePage.AttendeeNameLabel",
+            "text": "form.UpsertJobAttendeePage.AttendeeName"
         },
         {
-          "type": "textEditor",
-          "keyboardType": "number-pad",
+          "type": "selectEditor",
+          "title": "form.UpsertJobAttendeePage.AttendeeStatus",
+          "placeholder": "form.UpsertJobAttendeePage.AttendeeStatusPlaceholder",
+          "mandatory": true,
           "valueExpression": "pageData.Status",
-          "title": "form.UpsertJobProductPage.Quantity",
-          "placeholder": "form.UpsertJobProductPage.QuantityHint",
-          "validator": [
-            {
-              "type": "expression",
-              "errorMessage": "form.UpsertJobProductPage.QuantityMustBeAbove0",
-              "expression": "pageData.Qty > 0 && pageData.Qty <= 1000"
-            }
-          ]
+          "sourceExpression": "sharedData.__vocabulary.AttendeeStatus",
+          "displayExpression": "pageData.Status",
+          "selectPage": {
+          "itemTitle": "form.UpsertJobAttendeePage.SelectAttendeeStatusItemTitle",
+          "title": "form.UpsertJobAttendeePage.SelectAttendeeStatusPageTitle",
+          "searchBar": {}
+          },
+        "validator": [
+        {
+        "type": "expression",
+        "expression": "pageData.Status",
+        "errorMessage": "FieldIsRequired"
+        }
+        ]
         }
       ]
     }

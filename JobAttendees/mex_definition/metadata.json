@@ -1,5 +1,5 @@
 {
-    "summary": "Allows you to manage Job Products",
+    "summary": "Allows you to manage Attendees related to a Job",
     "email": "",
     "revisionCount": 1,
     "contextObject": "Jobs",

@@ -5,9 +5,12 @@
     "fields": [
       "UID",
       "JobId",
+      "Status",
+      "CancelReason",
+      "CreatedDate",
       "Contact.UID",
       "Contact.FirstName",
-      "Status"
+      "Contact.LastName"
     ],
     "filter": "JobId == '${jobUID}'",
     "variables": {

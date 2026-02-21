@@ -1,13 +1,6 @@
 {
-  "type": "GraphQl",
-  "Products": {
-    "object": "Contacts",
-    "fields": [
-      "UID",
-      "FirstName",
-      "LastName"
-    ],
-    "filter": "",
-    "variables": {}
-  }
+ "type": "GraphQl",
+ "__vocabulary": {
+   "AttendeeStatus": "Attendees:Status"
+ }
 }
