@@ -1,1 +1,17 @@
 .DS_Store
+.agents/skills/connected-function-developer/AGENTS.md
+.agents/skills/connected-function-developer/SKILL.md
+.agents/skills/optimization-extension-developer/AGENTS.md
+.agents/skills/optimization-extension-developer/SKILL.md
+.agents/skills/page-builder-column-templates/AGENTS.md
+.agents/skills/page-builder-column-templates/column-template-reference.md
+.agents/skills/page-builder-column-templates/SKILL.md
+.agents/skills/skedulo-api-developer/AGENTS.md
+.agents/skills/skedulo-api-developer/SKILL.md
+.agents/skills/skedulo-api-developer/references/advanced-patterns.md
+.agents/skills/skedulo-api-developer/references/api-clients.md
+.agents/skills/skedulo-api-developer/references/quick-reference.md
+.agents/skills/skedulo-cli/AGENTS.md
+.agents/skills/skedulo-cli/cli-reference.md
+.agents/skills/skedulo-cli/SKILL.md
+skills-lock.json

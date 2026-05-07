@@ -8,8 +8,6 @@
       "Status",
       "CancelReason",
       "TimeCancelled",
-      "Waitlisted",
-      "Notes",
       "CreatedDate",
       "Contact.UID",
       "Contact.FirstName",

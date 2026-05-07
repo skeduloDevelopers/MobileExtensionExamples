@@ -57,9 +57,28 @@
       },
       "items": [
         {
-            "type": "textView",
-            "title": "form.UpsertJobAttendeePage.AttendeeNameLabel",
-            "text": "form.UpsertJobAttendeePage.AttendeeName"
+          "type": "selectEditor",
+          "title": "form.UpsertJobAttendeePage.AttendeeNameLabel",
+          "placeholder": "form.UpsertJobAttendeePage.AttendeeNamePlaceholder",
+          "mandatory": true,
+          "structureExpression": "pageData.Contact",
+          "valueExpression": "pageData.ContactId",
+          "sourceExpression": "sharedData.Contacts",
+          "displayExpression": "pageData.Contact.FirstName + ' ' + pageData.Contact.LastName",
+          "selectPage": {
+            "title": "form.UpsertJobAttendeePage.SelectAttendeePageTitle",
+            "itemTitle": "form.UpsertJobAttendeePage.SelectAttendeeItemTitle",
+            "searchBar": {
+              "filterOnProperties": ["FirstName", "LastName"]
+            }
+          },
+          "validator": [
+            {
+              "type": "expression",
+              "expression": "pageData.ContactId",
+              "errorMessage": "form.UpsertJobAttendeePage.AttendeeIsRequired"
+            }
+          ]
         },
         {
           "type": "selectEditor",
@@ -103,23 +122,6 @@
           "valueExpression": "pageData.TimeCancelled",
           "showIfExpression": "pageData.Status == 'Cancelled'",
           "readonly": true
-        },
-        {
-          "type": "toggleEditor",
-          "mode": "switch",
-          "items": [
-            {
-              "valueExpression": "pageData.Waitlisted",
-              "text": "form.UpsertJobAttendeePage.Waitlisted"
-            }
-          ]
-        },
-        {
-          "type": "textEditor",
-          "title": "form.UpsertJobAttendeePage.Notes",
-          "placeholder": "form.UpsertJobAttendeePage.NotesHint",
-          "valueExpression": "pageData.Notes",
-          "multiline": true
         }
       ]
     }

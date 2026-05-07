@@ -1,4 +1,5 @@
 {
+  "FieldIsRequired": "This field is required",
   "form": {
     "JobAttendeesListPages": {
       "JobAttendeesTitle": "Attendees",
@@ -38,7 +39,8 @@
       "SerialNumberMustBeEntered": "You must enter or scan a serial number",
       "SelectAttendeeStatusItemTitle": "${item.Label}",
       "SelectAttendeeStatusPageTitle": "Select Attendee Status",
-      "AttendeeStatus":"Status",
+      "AttendeeStatus": "Status",
+      "AttendeeStatusPlaceholder": "Select a status",
       "Waitlisted": "Waitlisted",
       "CancelReason": "Cancel Reason",
       "CancelReasonPlaceholder": "Select a cancel reason",
@@ -46,7 +48,9 @@
       "SelectCancelReasonPageTitle": "Select Cancel Reason",
       "TimeCancelled": "Time Cancelled",
       "AttendeeNameLabel": "Attendee",
-      "AttendeeName": "${pageData.Contact.FirstName} ${pageData.Contact.LastName}"
+      "AttendeeNamePlaceholder": "Select an attendee",
+      "SelectAttendeePageTitle": "Select Attendee",
+      "SelectAttendeeItemTitle": "${item.FirstName} ${item.LastName}"
     },
     "JobAttendeeSelectPage": {
       "Title": "Select an Attendee",

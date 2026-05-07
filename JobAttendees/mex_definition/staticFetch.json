@@ -1,7 +1,15 @@
 {
- "type": "GraphQl",
- "__vocabulary": {
-   "AttendeeStatus": "Attendees:Status",
-   "CancelReason": "Attendees:CancelReason"
- }
+  "type": "GraphQl",
+  "__vocabulary": {
+    "AttendeeStatus": "Attendees:Status",
+    "CancelReason": "Attendees:CancelReason"
+  },
+  "Contacts": {
+    "object": "Contacts",
+    "fields": [
+      "UID",
+      "FirstName",
+      "LastName"
+    ]
+  }
 }
